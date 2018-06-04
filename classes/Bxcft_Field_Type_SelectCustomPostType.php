@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_SelectCustomPostType'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'Custom Post Type Selector', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'Custom Post Type Selector', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->supports_options = true;
 
@@ -76,14 +76,14 @@ if (!class_exists('Bxcft_Field_Type_SelectCustomPostType'))
         <?php
             if (!$post_types):
         ?>
-                <h3><?php _e('There is no custom post type. You need to create at least one to use this field.', 'bxcft'); ?></h3>
+                <h3><?php _e('There is no custom post type. You need to create at least one to use this field.', 'bp-xprofile-custom-fields'); ?></h3>
         <?php else : ?>
-                <h3><?php esc_html_e( 'Select a custom post type:', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Select a custom post type:', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
-                        <?php _e('Select a custom post type:', 'bxcft'); ?>
+                        <?php _e('Select a custom post type:', 'bp-xprofile-custom-fields'); ?>
                         <select name="<?php echo esc_attr( "{$type}_option[1]" ); ?>" id="<?php echo esc_attr( "{$type}_option[1]" ); ?>">
-                            <option value=""><?php _e('Select...', 'bxcft'); ?></option>
+                            <option value=""><?php _e('Select...', 'bp-xprofile-custom-fields'); ?></option>
                         <?php foreach($post_types as $k=>$v): ?>
                             <option value="<?php echo $k; ?>"<?php if ($options[0]->name == $k): ?> selected="selected"<?php endif; ?>><?php echo $v; ?></option>
                         <?php endforeach; ?>
@@ -114,7 +114,7 @@ if (!class_exists('Bxcft_Field_Type_SelectCustomPostType'))
             <label for="<?php bp_the_profile_field_input_name(); ?>"><?php bp_the_profile_field_name(); ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php esc_html_e( '(required)', 'buddypress' ); ?><?php endif; ?></label>
             <?php do_action( bp_get_the_profile_field_errors_action() ); ?>
             <select <?php echo $html; ?>>
-                <option value=""><?php _e('Select...', 'bxcft'); ?></option>
+                <option value=""><?php _e('Select...', 'bp-xprofile-custom-fields'); ?></option>
                 <?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
             </select>
         <?php
@@ -205,7 +205,7 @@ if (!class_exists('Bxcft_Field_Type_SelectCustomPostType'))
                     if ($post && $post->post_type == $post_type_selected) {
                         $new_field_value = $post->post_title;
                     } else {
-                        $new_field_value = __('--', 'bxcft');
+                        $new_field_value = __('--', 'bp-xprofile-custom-fields');
                     }
 
                     $do_autolink = apply_filters('bxcft_do_autolink',

@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_CheckboxAcceptance'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'Checkbox Acceptance', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'Checkbox Acceptance', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->accepts_null_value   = true;
             $this->supports_options     = true;
@@ -111,7 +111,7 @@ if (!class_exists('Bxcft_Field_Type_CheckboxAcceptance'))
             }
         ?>
             <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-                <h3><?php esc_html_e( 'Use this field to write a text that should be displayed beside the checkbox:', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Use this field to write a text that should be displayed beside the checkbox:', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
                         <textarea name="<?php echo esc_attr( "{$type}_text" ); ?>"
@@ -198,7 +198,7 @@ if (!class_exists('Bxcft_Field_Type_CheckboxAcceptance'))
 
                 if ($field) {
                     $new_field_value = ((int)$field_value == 1) ?
-                        __('yes', 'bxcft') : __('no', 'bxcft');
+                        __('yes', 'bp-xprofile-custom-fields') : __('no', 'bp-xprofile-custom-fields');
 
                     $do_autolink = apply_filters('bxcft_do_autolink',
                         $field->get_do_autolink());

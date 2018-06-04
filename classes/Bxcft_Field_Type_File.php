@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_File'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'File', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'File', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->set_format( '/^.+$/', 'replace' );
             do_action( 'bp_xprofile_field_type_file', $this );
@@ -55,16 +55,16 @@ if (!class_exists('Bxcft_Field_Type_File'))
             // Actual file.
             if (bp_get_the_profile_field_edit_value() != '' && bp_get_the_profile_field_edit_value() != '-') {
                 $actual_file = sprintf('%1$s<label for="%2$s_deletefile"><input type="checkbox" name="%2$s_deletefile" id="%2$s_deletefile" value="1" /> %3$s</label><input type="hidden" name="%2$s_hiddenfile" id="%2$s_hiddenfile" value="%4$s" />',
-                                        apply_filters('bxcft_show_download_file_link', '<a href="' . $uploads['baseurl'] . bp_get_the_profile_field_edit_value() . '" title="' . bp_get_the_profile_field_input_name() . '">' . __('Download file', 'bxcft') . '</a>', bp_get_the_profile_field_type(), bp_get_the_profile_field_id(), bp_get_the_profile_field_edit_value()),
+                                        apply_filters('bxcft_show_download_file_link', '<a href="' . $uploads['baseurl'] . bp_get_the_profile_field_edit_value() . '" title="' . bp_get_the_profile_field_input_name() . '">' . __('Download file', 'bp-xprofile-custom-fields') . '</a>', bp_get_the_profile_field_type(), bp_get_the_profile_field_id(), bp_get_the_profile_field_edit_value()),
                                         bp_get_the_profile_field_input_name(),
-                                        __('Check this to delete this file', 'bxcft'),
+                                        __('Check this to delete this file', 'bp-xprofile-custom-fields'),
                                         bp_get_the_profile_field_edit_value());
             } elseif (bp_get_profile_field_data(array('field' => bp_get_the_profile_field_id())) != '' &&
                         bp_get_profile_field_data(array('field' => bp_get_the_profile_field_id())) != '-') {
                 $actual_file = sprintf('%1$s<label for="%2$s_deletefile"><input type="checkbox" name="%2$s_deletefile" id="%2$s_deletefile" value="1" /> %3$s</label><input type="hidden" name="%2$s_hiddenfile" id="%2$s_hiddenfile" value="%4$s" />',
                                         apply_filters('bxcft_show_download_file_link', bp_get_profile_field_data(array('field' => bp_get_the_profile_field_id())), bp_get_the_profile_field_type(), bp_get_the_profile_field_id(), bp_get_the_profile_field_edit_value()),
                                         bp_get_the_profile_field_input_name(),
-                                        __('Check this to delete this file', 'bxcft'),
+                                        __('Check this to delete this file', 'bp-xprofile-custom-fields'),
                                         (isset($_POST['field_'.bp_get_the_profile_field_id().'_hiddenfile']))?$_POST['field_'.bp_get_the_profile_field_id().'_hiddenfile']:'');
             } else {
                 $actual_file = '';
@@ -121,7 +121,7 @@ if (!class_exists('Bxcft_Field_Type_File'))
                     $new_field_value = $uploads['baseurl'] . $field_value;
                 }
                 $new_field_value = sprintf('<a href="%s" rel="nofollow">%s</a>',
-                    $new_field_value, __('Download file', 'bxcft'));
+                    $new_field_value, __('Download file', 'bp-xprofile-custom-fields'));
             }
 
             /**

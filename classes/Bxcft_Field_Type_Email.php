@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_Email'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'Email (HTML5 field)', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'Email (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->set_format( '/^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/', 'replace' );  // "something@something.some"
             do_action( 'bp_xprofile_field_type_email', $this );

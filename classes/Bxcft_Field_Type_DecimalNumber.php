@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_DecimalNumber'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = __( 'Decimal number (HTML5 field)', 'bxcft' );
+            $this->name             = __( 'Decimal number (HTML5 field)', 'bp-xprofile-custom-fields' );
 
             $this->accepts_null_value   = true;
             $this->supports_options     = true;
@@ -124,7 +124,7 @@ if (!class_exists('Bxcft_Field_Type_DecimalNumber'))
             }
         ?>
             <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-                <h3><?php esc_html_e( 'Select max number of decimals:', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Select max number of decimals:', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
                         <select name="<?php echo esc_attr( "{$type}_option[1]" ); ?>" id="<?php echo esc_attr( "{$type}_option1" ); ?>">

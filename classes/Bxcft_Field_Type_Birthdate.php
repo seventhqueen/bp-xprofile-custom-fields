@@ -2,7 +2,7 @@
 /**
  * Birthdate type
  */
-if (!class_exists('Bxcft_Field_Type_Birthdate'))
+if ( ! class_exists('Bxcft_Field_Type_Birthdate' ) )
 {
     class Bxcft_Field_Type_Birthdate extends BP_XProfile_Field_Type
     {
@@ -14,7 +14,7 @@ if (!class_exists('Bxcft_Field_Type_Birthdate'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'Birthdate Selector', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'Birthdate Selector', 'xprofile field type', 'bp-xprofile-custom-fields' );
             $this->supports_options = true;
 
             $this->set_format( '/^\d{4}-\d{1,2}-\d{1,2} 00:00:00$/', 'replace' );  // "Y-m-d 00:00:00"
@@ -132,10 +132,10 @@ if (!class_exists('Bxcft_Field_Type_Birthdate'))
             }
         ?>
             <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-                <h3><?php esc_html_e( 'Show age (hide birthdate):', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Show age (hide birthdate):', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
-                        <?php _e('Check this if you want to show age instead of birthdate:', 'bxcft'); ?>
+                        <?php _e('Check this if you want to show age instead of birthdate:', 'bp-xprofile-custom-fields'); ?>
                         <input type="hidden"
                             name="<?php echo esc_attr( "{$type}_option[0]" ); ?>"
                             id="<?php echo esc_attr( "{$type}_option0" ); ?>"
@@ -148,10 +148,10 @@ if (!class_exists('Bxcft_Field_Type_Birthdate'))
                     </p>
                 </div>
 
-                <h3><?php esc_html_e( 'Define a minimum age:', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Define a minimum age:', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
-                        <?php _e('Minimum age:', 'bxcft'); ?>
+                        <?php _e('Minimum age:', 'bp-xprofile-custom-fields'); ?>
                         <input type="number"
                             name="<?php echo esc_attr( "{$type}_option[2]" ); ?>"
                             id="<?php echo esc_attr( "{$type}_option2" ); ?>"

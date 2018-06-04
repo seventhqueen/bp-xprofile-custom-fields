@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_Slider'))
         public function __construct() {
             parent::__construct();
 
-            $this->name = __( 'Range input (HTML5 field)', 'bxcft' );
+            $this->name = __( 'Range input (HTML5 field)', 'bp-xprofile-custom-fields' );
 
             $this->accepts_null_value = true;
             $this->supports_options = true;
@@ -143,16 +143,16 @@ if (!class_exists('Bxcft_Field_Type_Slider'))
             }
         ?>
             <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-                <h3><?php esc_html_e( 'Write min and max values.', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Write min and max values.', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
                         <label for="<?php echo esc_attr( "{$type}_option1" ); ?>">
-                            <?php esc_html_e('Minimum:', 'bxcft'); ?>
+                            <?php esc_html_e('Minimum:', 'bp-xprofile-custom-fields'); ?>
                         </label>
                         <input type="text" name="<?php echo esc_attr( "{$type}_option[1]" ); ?>"
                             id="<?php echo esc_attr( "{$type}_option1" ); ?>" value="<?php echo $min; ?>" />
                         <label for="<?php echo esc_attr( "{$type}_option2" ); ?>">
-                            <?php esc_html_e('Maximum:', 'bxcft'); ?>
+                            <?php esc_html_e('Maximum:', 'bp-xprofile-custom-fields'); ?>
                         </label>
                         <input type="text" name="<?php echo esc_attr( "{$type}_option[2]" ); ?>"
                             id="<?php echo esc_attr( "{$type}_option2" ); ?>" value="<?php echo $max; ?>" />
@@ -160,8 +160,8 @@ if (!class_exists('Bxcft_Field_Type_Slider'))
                 </div>
             </div>
             <script>
-                var error_msg_slider = '<?php esc_html_e("Min value cannot be bigger than max value.", "bxcft"); ?>',
-                    error_msg_slider_empty = '<?php esc_html_e("You have to fill the two fields.", "bxcft"); ?>';
+                var error_msg_slider = '<?php esc_html_e("Min value cannot be bigger than max value.", "bp-xprofile-custom-fields"); ?>',
+                    error_msg_slider_empty = '<?php esc_html_e("You have to fill the two fields.", "bp-xprofile-custom-fields"); ?>';
             </script>
         <?php
         }

@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_Datepicker'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'Datepicker (HTML5 field)', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'Datepicker (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->set_format( '/^\d{4}-\d{1,2}-\d{1,2}$/', 'replace' );  // "Y-m-d 00:00:00"
             do_action( 'bp_xprofile_field_type_datepicker', $this );

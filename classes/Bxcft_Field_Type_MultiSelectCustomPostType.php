@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_MultiSelectCustomPostType'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'Custom Post Type Multiselector', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'Custom Post Type Multiselector', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->supports_multiple_defaults   = true;
             $this->supports_options             = true;
@@ -84,14 +84,14 @@ if (!class_exists('Bxcft_Field_Type_MultiSelectCustomPostType'))
         <?php
             if (!$post_types):
         ?>
-                <h3><?php _e('There is no custom post type. You need to create at least one to use this field.', 'bxcft'); ?></h3>
+                <h3><?php _e('There is no custom post type. You need to create at least one to use this field.', 'bp-xprofile-custom-fields'); ?></h3>
         <?php else : ?>
-                <h3><?php esc_html_e( 'Select a custom post type:', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Select a custom post type:', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
-                        <?php _e('Select a custom post type:', 'bxcft'); ?>
+                        <?php _e('Select a custom post type:', 'bp-xprofile-custom-fields'); ?>
                         <select name="<?php echo esc_attr( "{$type}_option[1]" ); ?>" id="<?php echo esc_attr( "{$type}_option[1]" ); ?>">
-                            <option value=""><?php _e('Select...', 'bxcft'); ?></option>
+                            <option value=""><?php _e('Select...', 'bp-xprofile-custom-fields'); ?></option>
                         <?php foreach($post_types as $k=>$v): ?>
                             <option value="<?php echo $k; ?>"<?php if ($options[0]->name == $k): ?> selected="selected"<?php endif; ?>><?php echo $v; ?></option>
                         <?php endforeach; ?>

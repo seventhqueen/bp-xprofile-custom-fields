@@ -9,7 +9,7 @@ if (!class_exists('Bxcft_Field_Type_Image'))
         public function __construct() {
             parent::__construct();
 
-            $this->name             = _x( 'Image', 'xprofile field type', 'bxcft' );
+            $this->name             = _x( 'Image', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->set_format( '/^.+$/', 'replace' );
             do_action( 'bp_xprofile_field_type_image', $this );
@@ -57,14 +57,14 @@ if (!class_exists('Bxcft_Field_Type_Image'))
                 $actual_image = sprintf('<img src="%1$s" alt="%2$s" /><label for="%2$s_deleteimg"><input type="checkbox" name="%2$s_deleteimg" id="%2$s_deleteimg" value="1" /> %3$s</label><input type="hidden" name="%2$s_hiddenimg" id="%2$s_hiddenimg" value="%4$s" />',
                                         $uploads['baseurl'].bp_get_the_profile_field_edit_value(),
                                         bp_get_the_profile_field_input_name(),
-                                        __('Check this to delete this image', 'bxcft'),
+                                        __('Check this to delete this image', 'bp-xprofile-custom-fields'),
                                         bp_get_the_profile_field_edit_value());
             } elseif (bp_get_profile_field_data(array('field' => bp_get_the_profile_field_id())) != '' &&
                         bp_get_profile_field_data(array('field' => bp_get_the_profile_field_id())) != '-') {
                 $actual_image = sprintf('%1$s<label for="%2$s_deleteimg"><input type="checkbox" name="%2$s_deleteimg" id="%2$s_deleteimg" value="1" /> %3$s</label><input type="hidden" name="%2$s_hiddenimg" id="%2$s_hiddenimg" value="%4$s" />',
                                         strip_tags(bp_get_profile_field_data(array('field' => bp_get_the_profile_field_id()))),
                                         bp_get_the_profile_field_input_name(),
-                                        __('Check this to delete this image', 'bxcft'),
+                                        __('Check this to delete this image', 'bp-xprofile-custom-fields'),
                                         (isset($_POST['field_'.bp_get_the_profile_field_id().'_hiddenimg']))?$_POST['field_'.bp_get_the_profile_field_id().'_hiddenimg']:'');
             } else {
                 $actual_image = '';

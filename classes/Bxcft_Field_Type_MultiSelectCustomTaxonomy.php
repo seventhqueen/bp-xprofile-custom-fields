@@ -11,7 +11,7 @@ if (!class_exists('Bxcft_Field_Type_MultiSelectCustomTaxonomy'))
         public function __construct() {
             parent::__construct();
 
-            $this->name = _x( 'Custom Taxonomy Multiselector', 'xprofile field type', 'bxcft' );
+            $this->name = _x( 'Custom Taxonomy Multiselector', 'xprofile field type', 'bp-xprofile-custom-fields' );
 
             $this->supports_multiple_defaults   = true;
             $this->supports_options             = true;
@@ -86,21 +86,21 @@ if (!class_exists('Bxcft_Field_Type_MultiSelectCustomTaxonomy'))
         <?php
             if (!$taxonomies):
         ?>
-                <h3><?php _e('There is no custom taxonomy. You need to create at least one to use this field.', 'bxcft'); ?></h3>
+                <h3><?php _e('There is no custom taxonomy. You need to create at least one to use this field.', 'bp-xprofile-custom-fields'); ?></h3>
         <?php else : ?>
-                <h3><?php esc_html_e( 'Select a custom taxonomy:', 'bxcft' ); ?></h3>
+                <h3><?php esc_html_e( 'Select a custom taxonomy:', 'bp-xprofile-custom-fields' ); ?></h3>
                 <div class="inside">
                     <p>
-                        <?php _e('Select a custom taxonomy:', 'bxcft'); ?>
+                        <?php _e('Select a custom taxonomy:', 'bp-xprofile-custom-fields'); ?>
                         <select name="<?php echo esc_attr( "{$type}_option[1]" ); ?>" id="<?php echo esc_attr( "{$type}_option[1]" ); ?>">
-                            <option value=""><?php _e('Select...', 'bxcft'); ?></option>
+                            <option value=""><?php _e('Select...', 'bp-xprofile-custom-fields'); ?></option>
                         <?php foreach($taxonomies as $k=>$v): ?>
                             <option value="<?php echo $k; ?>"<?php if ($options[0]->name == $k): ?> selected="selected"<?php endif; ?>><?php echo $v; ?></option>
                         <?php endforeach; ?>
                         </select>
                     </p>
                     <p>
-                        <?php _e('Allow users to add new tags:', 'bxcft'); ?>
+                        <?php _e('Allow users to add new tags:', 'bp-xprofile-custom-fields'); ?>
                         <input type="checkbox" name="<?php echo esc_attr( "{$type}_option[2]" ); ?>"
                             id="<?php echo esc_attr( "{$type}_option[2]" ); ?>" value="<?php echo Bxcft_Field_Type_MultiSelectCustomTaxonomy::ALLOW_NEW_TAGS; ?>"
                             <?php if (is_array($options) && isset($options[1]) && $options[1]->name === Bxcft_Field_Type_MultiSelectCustomTaxonomy::ALLOW_NEW_TAGS): ?> checked="checked"<?php endif; ?> />
