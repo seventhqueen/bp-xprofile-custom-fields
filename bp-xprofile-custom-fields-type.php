@@ -1,7 +1,6 @@
 <?php
 /*
     Plugin Name: BP Xprofile Custom Fields
-    Plugin URI: https://seventhqueen.com
     Description: Extends the default Buddypress field types you can set for profile. Field types are: Birthdate, Email, Url, Datepicker ...
     Version: 2.6.4
     Author: seventhqueen
@@ -206,18 +205,7 @@ if ( ! class_exists( 'SQ_BP_XProfile' ) ) {
 		 * @return boolean
 		 */
 		private function compare_versions( $version_actual, $version_needed ) {
-			$components_version_actual = explode( '.', $version_actual );
-			$components_version_needed = explode( '.', $version_needed );
-
-			foreach ( $components_version_needed as $key => $element ) {
-				if ( isset( $components_version_actual[ $key ] ) &&
-				     (int) $components_version_actual[ $key ] < (int) $element
-				) {
-					return false;
-				}
-			}
-
-			return true;
+			return version_compare( $version_actual, $version_needed, '>=' );
 		}
 
 		public function admin_notices() {
